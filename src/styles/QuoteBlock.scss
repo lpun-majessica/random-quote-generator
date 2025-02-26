@@ -11,7 +11,7 @@
 	background-color: $white;
 	border-radius: 10px;
 	box-shadow: 10px 10px #25352950;
-	padding: 2rem;
+	padding: 2rem 3rem;
 }
 
 .quote,
@@ -47,7 +47,7 @@
 
 .new-quote-btn {
 	position: absolute;
-	top: 20vh;
+	top: 15vh;
 	margin: 0 auto;
 	border: none;
 	border-radius: 50%;
@@ -71,6 +71,24 @@
 .btn-icon {
 	font-size: 5.5rem;
 	padding: 0.5rem;
+}
+
+@media (max-height: 650px), (max-width: 650px) {
+	.quote-container {
+		padding-right: 4.5rem;
+	}
+	.new-quote-btn {
+		position: absolute;
+		top: 3vh;
+		right: 3vh;
+		border: 5px solid $white;
+		box-shadow: 0.5rem 0.5rem #25352950;
+		transition: 0.2s;
+	}
+	.btn-icon {
+		font-size: 3rem;
+		padding: 0.25rem;
+	}
 }
 
 @include app-bg-colors;
