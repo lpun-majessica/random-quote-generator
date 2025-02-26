@@ -1,0 +1,26 @@
+$white: #f2f2f2;
+$black: #253529;
+
+$red: #f5adcf;
+$orange: #f6c7c8;
+$yellow: #e8d98f;
+$green: #c4dbb9;
+$blue: #a9bce5;
+$purple: #b497ef;
+
+$bg-colors-list: (
+	"red": $red,
+	"orange": $orange,
+	"yellow": $yellow,
+	"green": $green,
+	"blue": $blue,
+	"purple": $purple,
+);
+
+@mixin app-bg-colors {
+	@each $color, $value in $bg-colors-list {
+		.#{$color} {
+			background-color: #{$value};
+		}
+	}
+}

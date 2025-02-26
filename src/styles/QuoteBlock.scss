@@ -1,0 +1,76 @@
+@use "/src/assets/colors" as *;
+
+.quote-container {
+	width: 90vw;
+	max-width: 700px;
+	min-height: 150px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: $white;
+	border-radius: 10px;
+	box-shadow: 10px 10px #25352950;
+	padding: 2rem;
+}
+
+.quote,
+.author {
+	font-family: Arial, sans-serif;
+	padding: 0.5em 0;
+}
+
+.quote {
+	font-size: 2.5rem;
+	text-align: center;
+}
+
+.quote::before,
+.quote::after {
+	content: '"';
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+	font-size: 3rem;
+	margin: 0.5rem 1rem;
+}
+
+.author {
+	font-size: 1.6rem;
+	font-style: italic;
+	opacity: 80%;
+	margin-left: auto;
+}
+
+.author::before {
+	content: "- ";
+}
+
+.new-quote-btn {
+	position: absolute;
+	top: 20vh;
+	margin: 0 auto;
+	border: none;
+	border-radius: 50%;
+	padding: 0.75rem;
+	border: 10px solid $white;
+	box-shadow: 0.5rem 0.5rem #25352950;
+	transition: 0.2s;
+}
+
+.new-quote-btn:hover {
+	cursor: pointer;
+	transform: translateY(-0.3rem);
+	box-shadow: 1rem 1rem #25352950;
+}
+
+.new-quote-btn:active {
+	transform: translateY(0.3rem);
+	box-shadow: 0.2rem 0.3rem #25352950;
+}
+
+.btn-icon {
+	font-size: 5.5rem;
+	padding: 0.5rem;
+}
+
+@include app-bg-colors;

@@ -1,0 +1,25 @@
+@use "/src/assets/colors" as *;
+
+* {
+	font-size: 10px;
+	box-sizing: border-box;
+	color: $black;
+	margin: 0;
+}
+
+.app-container,
+.loading {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.loading {
+	font-size: 3.5rem;
+	font-family: Arial, sans-serif;
+}
+
+@include app-bg-colors;
