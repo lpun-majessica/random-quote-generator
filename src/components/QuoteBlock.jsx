@@ -17,19 +17,20 @@ function QuoteBlock({ quotes, changeColor, buttonColor }) {
 
 	return (
 		<>
-			<Button
-				className={`new-quote-btn ${buttonColor}`}
-				title="Generate New Quote"
-				onClick={() => {
-					randomiseQuote();
-					changeColor();
-				}}
-			>
-				<FontAwesomeIcon icon={faArrowsRotate} className="btn-icon" />
-			</Button>
 			<div className="quote-container">
 				<p className="quote">{quoteData.quote}</p>
 				<p className="author">{quoteData.author}</p>
+
+				<Button
+					className={`new-quote-btn ${buttonColor}`}
+					title="Generate New Quote"
+					onClick={() => {
+						randomiseQuote();
+						changeColor();
+					}}
+				>
+					<FontAwesomeIcon icon={faArrowsRotate} className="btn-icon" />
+				</Button>
 			</div>
 		</>
 	);

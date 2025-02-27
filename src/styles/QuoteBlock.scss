@@ -1,17 +1,19 @@
 @use "/src/assets/colors" as *;
 
 .quote-container {
-	width: 90vw;
-	max-width: 700px;
-	min-height: 150px;
+	width: 85vw;
+	max-width: 750px;
+	min-height: 265px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
 	background-color: $white;
 	border-radius: 10px;
-	box-shadow: 10px 10px #25352950;
+	box-shadow: 10px 10px $shadow;
 	padding: 2rem 3rem;
+	position: relative;
+	margin-left: -1vw;
 }
 
 .quote,
@@ -23,6 +25,7 @@
 .quote {
 	font-size: 2.5rem;
 	text-align: center;
+	margin: auto 0;
 }
 
 .quote::before,
@@ -47,46 +50,53 @@
 
 .new-quote-btn {
 	position: absolute;
-	top: 15vh;
-	margin: 0 auto;
+	top: 0;
+	right: 0;
+	transform: translateX(40%) translateY(-50%);
 	border: none;
 	border-radius: 50%;
 	padding: 0.75rem;
-	border: 10px solid $white;
-	box-shadow: 0.5rem 0.5rem #25352950;
+	border: 7px solid $white;
+	box-shadow: 0.5rem 1rem 0 0.3rem $shadow;
 	transition: 0.2s;
 }
 
 .new-quote-btn:hover {
 	cursor: pointer;
-	transform: translateY(-0.3rem);
-	box-shadow: 1rem 1rem #25352950;
+	transform: translateX(40%) translateY(-55%);
+	box-shadow: 0.5rem 1.2rem 0 0.4rem $shadow;
 }
 
 .new-quote-btn:active {
-	transform: translateY(0.3rem);
-	box-shadow: 0.2rem 0.3rem #25352950;
+	transform: translateX(40%) translateY(-48%);
+	box-shadow: 0.2rem 0.3rem 0 0.1rem $shadow;
 }
 
 .btn-icon {
-	font-size: 5.5rem;
+	font-size: 4rem;
 	padding: 0.5rem;
 }
 
-@media (max-height: 650px), (max-width: 650px) {
+@media screen and (max-height: 650px), screen and (max-width: 650px) {
 	.quote-container {
-		padding-right: 4.5rem;
+		min-height: 200px;
 	}
+
+	.quote,
+	.quote::before,
+	.quote::after {
+		font-size: 2rem;
+	}
+
+	.author {
+		font-size: 1.35rem;
+	}
+
 	.new-quote-btn {
-		position: absolute;
-		top: 3vh;
-		right: 3vh;
-		border: 5px solid $white;
-		box-shadow: 0.5rem 0.5rem #25352950;
-		transition: 0.2s;
+		border-width: 5px;
 	}
 	.btn-icon {
-		font-size: 3rem;
+		font-size: 2.5rem;
 		padding: 0.25rem;
 	}
 }
