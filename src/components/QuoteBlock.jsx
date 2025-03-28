@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
@@ -8,12 +8,12 @@ import "../styles/QuoteBlock.scss";
 function QuoteBlock({ quotes, changeColor, buttonColor }) {
 	const [quoteData, setQuote] = useState({});
 
-	const randomiseQuote = () => {
+	const randomiseQuote = useCallback(() => {
 		const newQuoteIndex = Math.floor(Math.random() * quotes.length);
 		setQuote(quotes[newQuoteIndex]);
-	};
+	}, [quotes]);
 
-	useEffect(() => randomiseQuote());
+	useEffect(() => randomiseQuote(), [randomiseQuote]);
 
 	return (
 		<>
