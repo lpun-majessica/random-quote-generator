@@ -1,5 +1,5 @@
 import QuoteBlock from "./QuoteBlock";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/App.scss";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
 	const [color, setColor] = useState("red");
 	const [colorIndex, setColorIndex] = useState(1);
 
-	const changeColor = useCallback(() => {
+	const changeColor = () => {
 		const backgroundColors = [
 			"red",
 			"orange",
@@ -19,7 +19,7 @@ function App() {
 
 		setColorIndex((c) => (c + 1) % backgroundColors.length);
 		setColor(() => backgroundColors[colorIndex]);
-	}, [colorIndex]);
+	};
 
 	useEffect(() => {
 		fetch(
